@@ -2174,7 +2174,7 @@ module.exports = (() => {
   return Connection;
 })();
 
-},{"./../logging/LoggerFactory":15,"./../utilities/parse/ddf/message":38,"./../utilities/parsers/SymbolParser":41,"./ConnectionBase":3,"./diagnostics/DiagnosticsControllerBase":7,"./snapshots/exchanges/retrieveExchanges":8,"./snapshots/profiles/retrieveExtensions":9,"./snapshots/quotes/retrieveExtensions":10,"./snapshots/quotes/retrieveSnapshots":11,"@barchart/common-js/lang/array":51,"@barchart/common-js/lang/assert":52,"@barchart/common-js/lang/object":54}],3:[function(require,module,exports){
+},{"./../logging/LoggerFactory":15,"./../utilities/parse/ddf/message":38,"./../utilities/parsers/SymbolParser":41,"./ConnectionBase":3,"./diagnostics/DiagnosticsControllerBase":7,"./snapshots/exchanges/retrieveExchanges":8,"./snapshots/profiles/retrieveExtensions":9,"./snapshots/quotes/retrieveExtensions":10,"./snapshots/quotes/retrieveSnapshots":11,"@barchart/common-js/lang/array":52,"@barchart/common-js/lang/assert":53,"@barchart/common-js/lang/object":55}],3:[function(require,module,exports){
 const is = require('@barchart/common-js/lang/is');
 const Environment = require('./../environment/Environment'),
   EnvironmentForBrowsers = require('./../environment/EnvironmentForBrowsers');
@@ -2563,7 +2563,7 @@ module.exports = (() => {
   return ConnectionBase;
 })();
 
-},{"./../environment/Environment":12,"./../environment/EnvironmentForBrowsers":13,"./../marketState/MarketState":19,"@barchart/common-js/lang/is":53}],4:[function(require,module,exports){
+},{"./../environment/Environment":12,"./../environment/EnvironmentForBrowsers":13,"./../marketState/MarketState":19,"@barchart/common-js/lang/is":54}],4:[function(require,module,exports){
 module.exports = (() => {
   'use strict';
 
@@ -2857,7 +2857,7 @@ module.exports = (() => {
   return DiagnosticsControllerBase;
 })();
 
-},{"@barchart/common-js/lang/assert":52,"@barchart/common-js/lang/is":53}],8:[function(require,module,exports){
+},{"@barchart/common-js/lang/assert":53,"@barchart/common-js/lang/is":54}],8:[function(require,module,exports){
 const axios = require('axios');
 module.exports = (() => {
   'use strict';
@@ -2904,7 +2904,7 @@ module.exports = (() => {
   return retrieveExchanges;
 })();
 
-},{"axios":57}],9:[function(require,module,exports){
+},{"axios":58}],9:[function(require,module,exports){
 const axios = require('axios');
 const array = require('@barchart/common-js/lang/array'),
   assert = require('@barchart/common-js/lang/assert'),
@@ -3180,7 +3180,7 @@ module.exports = (() => {
   return retrieveExtensions;
 })();
 
-},{"./../../../logging/LoggerFactory":15,"./../../../utilities/parsers/SymbolParser":41,"@barchart/common-js/lang/Day":47,"@barchart/common-js/lang/array":51,"@barchart/common-js/lang/assert":52,"@barchart/common-js/lang/is":53,"axios":57}],10:[function(require,module,exports){
+},{"./../../../logging/LoggerFactory":15,"./../../../utilities/parsers/SymbolParser":41,"@barchart/common-js/lang/Day":47,"@barchart/common-js/lang/array":52,"@barchart/common-js/lang/assert":53,"@barchart/common-js/lang/is":54,"axios":58}],10:[function(require,module,exports){
 const axios = require('axios');
 const array = require('@barchart/common-js/lang/array'),
   Day = require('@barchart/common-js/lang/Day'),
@@ -3353,7 +3353,7 @@ module.exports = (() => {
   return retrieveExtensions;
 })();
 
-},{"./../../../utilities/parsers/SymbolParser":41,"@barchart/common-js/lang/Day":47,"@barchart/common-js/lang/array":51,"@barchart/common-js/lang/is":53,"axios":57}],11:[function(require,module,exports){
+},{"./../../../utilities/parsers/SymbolParser":41,"@barchart/common-js/lang/Day":47,"@barchart/common-js/lang/array":52,"@barchart/common-js/lang/is":54,"axios":58}],11:[function(require,module,exports){
 const axios = require('axios');
 const array = require('@barchart/common-js/lang/array'),
   is = require('@barchart/common-js/lang/is');
@@ -3524,7 +3524,7 @@ module.exports = (() => {
   return retrieveSnapshots;
 })();
 
-},{"./../../../logging/LoggerFactory":15,"./../../../utilities/convert/baseCodeToUnitCode":23,"./../../../utilities/convert/dateToDayCode":24,"./../../../utilities/convert/dayCodeToNumber":25,"./../../../utilities/parsers/SymbolParser":41,"@barchart/common-js/lang/array":51,"@barchart/common-js/lang/is":53,"axios":57}],12:[function(require,module,exports){
+},{"./../../../logging/LoggerFactory":15,"./../../../utilities/convert/baseCodeToUnitCode":23,"./../../../utilities/convert/dateToDayCode":24,"./../../../utilities/convert/dayCodeToNumber":25,"./../../../utilities/parsers/SymbolParser":41,"@barchart/common-js/lang/array":52,"@barchart/common-js/lang/is":54,"axios":58}],12:[function(require,module,exports){
 const assert = require('@barchart/common-js/lang/assert');
 const WebSocketAdapterFactory = require('./../connection/adapter/WebSocketAdapterFactory'),
   XmlParserFactory = require('./../utilities/xml/XmlParserFactory');
@@ -3564,7 +3564,7 @@ module.exports = (() => {
   return Environment;
 })();
 
-},{"./../connection/adapter/WebSocketAdapterFactory":5,"./../utilities/xml/XmlParserFactory":43,"@barchart/common-js/lang/assert":52}],13:[function(require,module,exports){
+},{"./../connection/adapter/WebSocketAdapterFactory":5,"./../utilities/xml/XmlParserFactory":43,"@barchart/common-js/lang/assert":53}],13:[function(require,module,exports){
 const Environment = require('./Environment');
 const WebSocketAdapterFactoryForBrowsers = require('./../connection/adapter/WebSocketAdapterFactoryForBrowsers'),
   XmlParserFactoryForBrowsers = require('./../utilities/xml/XmlParserFactoryForBrowsers');
@@ -3881,7 +3881,7 @@ module.exports = (() => {
 })();
 
 },{}],17:[function(require,module,exports){
-const object = require('@barchart/common-js/lang//object');
+const object = require('@barchart/common-js/lang/object');
 const LoggerFactory = require('./../logging/LoggerFactory');
 module.exports = (() => {
   'use strict';
@@ -4112,7 +4112,7 @@ module.exports = (() => {
   return CumulativeVolume;
 })();
 
-},{"./../logging/LoggerFactory":15,"@barchart/common-js/lang//object":54}],18:[function(require,module,exports){
+},{"./../logging/LoggerFactory":15,"@barchart/common-js/lang/object":55}],18:[function(require,module,exports){
 const Timezones = require('@barchart/common-js/lang/Timezones');
 module.exports = (() => {
   'use strict';
@@ -4184,7 +4184,7 @@ module.exports = (() => {
   return Exchange;
 })();
 
-},{"@barchart/common-js/lang/Timezones":50}],19:[function(require,module,exports){
+},{"@barchart/common-js/lang/Timezones":51}],19:[function(require,module,exports){
 const is = require('@barchart/common-js/lang/is'),
   object = require('@barchart/common-js/lang/object'),
   timezone = require('@barchart/common-js/lang/timezone'),
@@ -4956,7 +4956,7 @@ module.exports = (() => {
   return MarketState;
 })();
 
-},{"../utilities/parsers/SymbolParser":41,"./../logging/LoggerFactory":15,"./../meta":22,"./../utilities/convert/dayCodeToNumber":25,"./CumulativeVolume":17,"./Exchange":18,"./Profile":20,"./Quote":21,"@barchart/common-js/lang/Timezones":50,"@barchart/common-js/lang/is":53,"@barchart/common-js/lang/object":54,"@barchart/common-js/lang/timezone":56}],20:[function(require,module,exports){
+},{"../utilities/parsers/SymbolParser":41,"./../logging/LoggerFactory":15,"./../meta":22,"./../utilities/convert/dayCodeToNumber":25,"./CumulativeVolume":17,"./Exchange":18,"./Profile":20,"./Quote":21,"@barchart/common-js/lang/Timezones":51,"@barchart/common-js/lang/is":54,"@barchart/common-js/lang/object":55,"@barchart/common-js/lang/timezone":57}],20:[function(require,module,exports){
 const SymbolParser = require('./../utilities/parsers/SymbolParser'),
   buildPriceFormatter = require('../utilities/format/factories/price');
 const AssetClass = require('./../utilities/data/AssetClass');
@@ -5427,7 +5427,7 @@ module.exports = (() => {
   'use strict';
 
   return {
-    version: '6.3.2'
+    version: '6.3.3'
   };
 })();
 
@@ -5458,7 +5458,7 @@ module.exports = (() => {
   return convertBaseCodeToUnitCode;
 })();
 
-},{"./../data/UnitCode":28,"@barchart/common-js/lang/is":53}],24:[function(require,module,exports){
+},{"./../data/UnitCode":28,"@barchart/common-js/lang/is":54}],24:[function(require,module,exports){
 const convertNumberToDayCode = require('./numberToDayCode');
 module.exports = (() => {
   'use strict';
@@ -5511,7 +5511,7 @@ module.exports = (() => {
   return convertDayCodeToNumber;
 })();
 
-},{"@barchart/common-js/lang/is":53}],26:[function(require,module,exports){
+},{"@barchart/common-js/lang/is":54}],26:[function(require,module,exports){
 const is = require('@barchart/common-js/lang/is');
 module.exports = (() => {
   'use strict';
@@ -5545,7 +5545,7 @@ module.exports = (() => {
   return convertNumberToDayCode;
 })();
 
-},{"@barchart/common-js/lang/is":53}],27:[function(require,module,exports){
+},{"@barchart/common-js/lang/is":54}],27:[function(require,module,exports){
 const Enum = require('@barchart/common-js/lang/Enum');
 module.exports = (() => {
   'use strict';
@@ -5681,7 +5681,7 @@ module.exports = (() => {
   return AssetClass;
 })();
 
-},{"@barchart/common-js/lang/Enum":49}],28:[function(require,module,exports){
+},{"@barchart/common-js/lang/Enum":50}],28:[function(require,module,exports){
 const assert = require('@barchart/common-js/lang/assert'),
   Decimal = require('@barchart/common-js/lang/Decimal'),
   is = require('@barchart/common-js/lang/is');
@@ -5952,7 +5952,7 @@ module.exports = (() => {
   return UnitCode;
 })();
 
-},{"@barchart/common-js/lang/Decimal":48,"@barchart/common-js/lang/Enum":49,"@barchart/common-js/lang/assert":52,"@barchart/common-js/lang/is":53}],29:[function(require,module,exports){
+},{"@barchart/common-js/lang/Decimal":49,"@barchart/common-js/lang/Enum":50,"@barchart/common-js/lang/assert":53,"@barchart/common-js/lang/is":54}],29:[function(require,module,exports){
 const timezone = require('@barchart/common-js/lang/timezone');
 module.exports = (() => {
   'use strict';
@@ -5984,7 +5984,7 @@ module.exports = (() => {
   };
 })();
 
-},{"@barchart/common-js/lang/timezone":56}],30:[function(require,module,exports){
+},{"@barchart/common-js/lang/timezone":57}],30:[function(require,module,exports){
 module.exports = (() => {
   'use strict';
 
@@ -6077,7 +6077,7 @@ module.exports = (() => {
   return formatDecimal;
 })();
 
-},{"@barchart/common-js/lang/is":53}],32:[function(require,module,exports){
+},{"@barchart/common-js/lang/is":54}],32:[function(require,module,exports){
 const formatPrice = require('./../price');
 module.exports = (() => {
   'use strict';
@@ -6185,7 +6185,7 @@ module.exports = (() => {
   return formatFraction;
 })();
 
-},{"@barchart/common-js/lang/is":53}],34:[function(require,module,exports){
+},{"@barchart/common-js/lang/is":54}],34:[function(require,module,exports){
 const is = require('@barchart/common-js/lang/is');
 const formatDecimal = require('./decimal'),
   formatFraction = require('./fraction');
@@ -6234,7 +6234,7 @@ module.exports = (() => {
   return formatPrice;
 })();
 
-},{"./../data/UnitCode":28,"./decimal":31,"./fraction":33,"@barchart/common-js/lang/is":53}],35:[function(require,module,exports){
+},{"./../data/UnitCode":28,"./decimal":31,"./fraction":33,"@barchart/common-js/lang/is":54}],35:[function(require,module,exports){
 const is = require('@barchart/common-js/lang/is');
 const formatDate = require('./date'),
   formatTime = require('./time');
@@ -6305,7 +6305,7 @@ module.exports = (() => {
   return formatQuoteDateTime;
 })();
 
-},{"./date":30,"./time":37,"@barchart/common-js/lang/Timezones":50,"@barchart/common-js/lang/is":53}],36:[function(require,module,exports){
+},{"./date":30,"./time":37,"@barchart/common-js/lang/Timezones":51,"@barchart/common-js/lang/is":54}],36:[function(require,module,exports){
 const AssetClass = require('./../../data/AssetClass');
 const formatFraction = require('./../fraction'),
   formatPrice = require('./../price');
@@ -7558,13 +7558,13 @@ module.exports = (() => {
   types.funds = {};
   types.funds.canadian = /(.*)(\.CF)$/i;
   types.futures = {};
-  types.futures.alias = /^([A-Z][A-Z0-9\$\-!\.]{0,2})(\*{1})([0-9]{1,2})$/i;
-  types.futures.concrete = /^([A-Z][A-Z0-9\$\-!\.]{0,2})([A-Z]{1})([0-9]{4}|[0-9]{1,2})$/i;
+  types.futures.alias = /^([A-Z][A-Z0-9\$\-!\.]{0,3})(\*{1})([0-9]{1,2})$/i;
+  types.futures.concrete = /^([A-Z][A-Z0-9\$\-!\.]{0,3})([A-Z]{1})([0-9]{4}|[0-9]{1,2})$/i;
   types.futures.spread = /^_S_/i;
   types.futures.cash = /(.*)(Y00)$/;
   types.futures.options = {};
-  types.futures.options.historical = /^([A-Z][A-Z0-9\$\-!\.]{0,2})([A-Z])([0-9]{2})([0-9]{1,5})(C|P)$/i;
-  types.futures.options.long = /^([A-Z][A-Z0-9\$\-!\.]{0,2})([A-Z])([0-9]{1,4})\|(\-?[0-9]{1,5})(C|P)$/i;
+  types.futures.options.historical = /^([A-Z][A-Z0-9\$\-!\.]{0,3})([A-Z])([0-9]{2})([0-9]{1,5})(C|P)$/i;
+  types.futures.options.long = /^([A-Z][A-Z0-9\$\-!\.]{0,3})([A-Z])([0-9]{1,4})\|(\-?[0-9]{1,5})(C|P)$/i;
   types.futures.options.short = /^([A-Z][A-Z0-9\$\-!\.]?)([A-Z])([0-9]{1,4})([A-Z])$/i;
   types.indicies = {};
   types.indicies.external = /^\$(.*)$/i;
@@ -7819,7 +7819,7 @@ module.exports = (() => {
   return SymbolParser;
 })();
 
-},{"./../data/AssetClass":27,"@barchart/common-js/lang/is":53,"@barchart/common-js/lang/string":55}],42:[function(require,module,exports){
+},{"./../data/AssetClass":27,"@barchart/common-js/lang/is":54,"@barchart/common-js/lang/string":56}],42:[function(require,module,exports){
 module.exports = (() => {
   'use strict';
 
@@ -8059,7 +8059,7 @@ module.exports = (() => {
   return ComparatorBuilder;
 })();
 
-},{"./../../lang/assert":52,"./comparators":46}],46:[function(require,module,exports){
+},{"./../../lang/assert":53,"./comparators":46}],46:[function(require,module,exports){
 const assert = require('./../../lang/assert');
 module.exports = (() => {
   'use strict';
@@ -8166,10 +8166,11 @@ module.exports = (() => {
   };
 })();
 
-},{"./../../lang/assert":52}],47:[function(require,module,exports){
+},{"./../../lang/assert":53}],47:[function(require,module,exports){
 const assert = require('./assert'),
   ComparatorBuilder = require('./../collections/sorting/ComparatorBuilder'),
   comparators = require('./../collections/sorting/comparators'),
+  DayFormatType = require('.//DayFormatType'),
   is = require('./is');
 module.exports = (() => {
   'use strict';
@@ -8186,7 +8187,7 @@ module.exports = (() => {
   class Day {
     constructor(year, month, day) {
       if (!Day.validate(year, month, day)) {
-        throw new Error(`Unable to instantiate Day, input is invalid [${year}], [${month}], [${day}]`);
+        throw new Error(`Unable to instantiate [ Day ], input is invalid [ ${year} ], [ ${month} ], [ ${day} ]`);
       }
       this._year = year;
       this._month = month;
@@ -8397,7 +8398,6 @@ module.exports = (() => {
      * @public
      * @param {Day=} first
      * @param {Day=} last
-     * @param {boolean=} exclusive
      * @returns {boolean}
      */
     getIsContained(first, last) {
@@ -8424,6 +8424,21 @@ module.exports = (() => {
      */
     getIsEqual(other) {
       return Day.compareDays(this, other) === 0;
+    }
+
+    /**
+     * Calculates and returns name of the day of the week (e.g. Monday, Tuesday, Wednesday, etc).
+     *
+     * @public
+     * @returns {String}
+     */
+    getName() {
+      const count = Day.countDaysBetween(REFERENCE_MONDAY, this);
+      let index = count % NAMES_OF_DAYS.length;
+      if (index < 0) {
+        index = index + NAMES_OF_DAYS.length;
+      }
+      return NAMES_OF_DAYS[index];
     }
 
     /**
@@ -8496,15 +8511,22 @@ module.exports = (() => {
      * @public
      * @static
      * @param {String} value
+     * @param {DayFormatType=} type
      * @returns {Day}
      */
-    static parse(value) {
+    static parse(value, type) {
       assert.argumentIsRequired(value, 'value', String);
-      const match = value.match(dayRegex);
+      let t;
+      if (type instanceof DayFormatType) {
+        t = type;
+      } else {
+        t = DayFormatType.YYYY_MM_DD;
+      }
+      const match = value.match(t.regex);
       if (match === null) {
         throw new Error(`Unable to parse value as Day [ ${value} ]`);
       }
-      return new Day(parseInt(match[1]), parseInt(match[2]), parseInt(match[3]));
+      return new Day(parseInt(match[t.yearIndex]) + t.yearShift, parseInt(match[t.monthIndex]), parseInt(match[t.dayIndex]));
     }
 
     /**
@@ -8567,6 +8589,7 @@ module.exports = (() => {
      * @static
      * @param {number} year - The year number (e.g. 2017)
      * @param {number} month - The month number (e.g. 2 is February)
+     * @returns {number}
      */
     static getDaysInMonth(year, month) {
       switch (month) {
@@ -8612,21 +8635,186 @@ module.exports = (() => {
       assert.argumentIsRequired(b, 'b', Day, 'Day');
       return comparator(a, b);
     }
+
+    /**
+     * Calculates the number of days between two {@link Day} instances (may return
+     * a negative value).
+     *
+     * @public
+     * @static
+     * @param {Day} a
+     * @param {Day} b
+     * @returns {Number}
+     */
+    static countDaysBetween(a, b) {
+      assert.argumentIsRequired(a, 'a', Day, 'Day');
+      assert.argumentIsRequired(b, 'b', Day, 'Day');
+      if (a.getIsEqual(b)) {
+        return 0;
+      }
+      let start;
+      let end;
+      let reversed = b.getIsBefore(a);
+      if (reversed) {
+        start = b;
+        end = a;
+      } else {
+        start = a;
+        end = b;
+      }
+      let currentMonth = start.month;
+      let currentYear = start.year;
+      let counter = 0 - start.day;
+      while (!(currentMonth === end.month && currentYear === end.year)) {
+        counter = counter + Day.getDaysInMonth(currentYear, currentMonth);
+        if (currentMonth === 12) {
+          currentMonth = 1;
+          currentYear = currentYear + 1;
+        } else {
+          currentMonth = currentMonth + 1;
+        }
+      }
+      counter = counter + end.day;
+      if (reversed) {
+        counter = counter * -1;
+      }
+      return counter;
+    }
     toString() {
       return '[Day]';
     }
   }
-  const dayRegex = /^([0-9]{4}).?([0-9]{2}).?([0-9]{2})$/;
   function leftPad(value, digits, character) {
     let string = value.toString();
     let padding = digits - string.length;
     return `${character.repeat(padding)}${string}`;
   }
   const comparator = ComparatorBuilder.startWith((a, b) => comparators.compareNumbers(a.year, b.year)).thenBy((a, b) => comparators.compareNumbers(a.month, b.month)).thenBy((a, b) => comparators.compareNumbers(a.day, b.day)).toComparator();
+  const NAMES_OF_DAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+  const REFERENCE_MONDAY = new Day(2024, 1, 1);
   return Day;
 })();
 
-},{"./../collections/sorting/ComparatorBuilder":45,"./../collections/sorting/comparators":46,"./assert":52,"./is":53}],48:[function(require,module,exports){
+},{"./../collections/sorting/ComparatorBuilder":45,"./../collections/sorting/comparators":46,".//DayFormatType":48,"./assert":53,"./is":54}],48:[function(require,module,exports){
+const Enum = require('./Enum');
+module.exports = (() => {
+  'use strict';
+
+  /**
+   * Describes for a day can be formatted.
+   *
+   * @public
+   * @extends {Enum}
+   * @param {String} description
+   */
+  class DayFormatType extends Enum {
+    constructor(description, regex, yearIndex, monthIndex, dayIndex, yearShift) {
+      super(description, description);
+      this._regex = regex;
+      this._yearIndex = yearIndex;
+      this._monthIndex = monthIndex;
+      this._dayIndex = dayIndex;
+      this._yearShift = yearShift;
+    }
+
+    /**
+     * A regular expression for parsing the day type.
+     *
+     * @public
+     * @returns {RegExp}
+     */
+    get regex() {
+      return this._regex;
+    }
+
+    /**
+     * The index used to read the year from a regular expression match.
+     *
+     * @public
+     * @returns {number}
+     */
+    get yearIndex() {
+      return this._yearIndex;
+    }
+
+    /**
+     * The index used to read the month from a regular expression match.
+     *
+     * @public
+     * @returns {number}
+     */
+    get monthIndex() {
+      return this._monthIndex;
+    }
+
+    /**
+     * The index used to read the day from a regular expression match.
+     *
+     * @public
+     * @returns {number}
+     */
+    get dayIndex() {
+      return this._dayIndex;
+    }
+
+    /**
+     * The amount to add to the year (extracted from a formatted string) to get the
+     * full year (e.g. for "11-31-25" of a MM-DD-YY string, the value will be 2000).
+     *
+     * @public
+     * @returns {number}
+     */
+    get yearShift() {
+      return this._yearShift;
+    }
+
+    /**
+     * Specifies date formatting as four-digit year, then month, then day (e.g. 2025-11-31).
+     *
+     * @public
+     * @static
+     * @returns {DayFormatType}
+     */
+    static get YYYY_MM_DD() {
+      return yyyymmdd;
+    }
+
+    /**
+     * Specifies date formatting as month, then day, then four-digit year (e.g. 11-31-2025).
+     *
+     * @public
+     * @static
+     * @returns {DayFormatType}
+     */
+    static get MM_DD_YYYY() {
+      return mmddyyyy;
+    }
+
+    /**
+     * Specifies date formatting as month, then day, then two-digit year (e.g. 11-31-25).
+     *
+     * @public
+     * @static
+     * @returns {DayFormatType}
+     */
+    static get MM_DD_YY() {
+      return mmddyy;
+    }
+    toString() {
+      return `[DayFormatType (description=${this.description})]`;
+    }
+  }
+  function getMillenniumShift() {
+    const today = new Date();
+    return Math.floor(today.getFullYear() / 100) * 100;
+  }
+  const yyyymmdd = new DayFormatType('YYYY_MM_DD', /^([0-9]{4})[-/.]?([0-9]{1,2})[-/.]?([0-9]{1,2})$/, 1, 2, 3, 0);
+  const mmddyyyy = new DayFormatType('MM_DD_YYYY', /^([0-9]{1,2})[-/.]?([0-9]{1,2})[-/.]?([0-9]{4})$/, 3, 1, 2, 0);
+  const mmddyy = new DayFormatType('MM_DD_YY', /^([0-9]{1,2})[-/.]?([0-9]{1,2})[-/.]?([0-9]{2})$/, 3, 1, 2, getMillenniumShift());
+  return DayFormatType;
+})();
+
+},{"./Enum":50}],49:[function(require,module,exports){
 const assert = require('./assert'),
   Enum = require('./Enum'),
   is = require('./is');
@@ -8675,7 +8863,7 @@ module.exports = (() => {
      * current instance's value and the value supplied.
      *
      * @public
-     * @param {Decimal|Number|String} other - The value to add.
+     * @param {Decimal|Number|String} other - The value to multiply the current instance by.
      * @returns {Decimal}
      */
     multiply(other) {
@@ -8688,7 +8876,7 @@ module.exports = (() => {
      * supplied.
      *
      * @public
-     * @param {Decimal|Number|String} other - The value to subtract.
+     * @param {Decimal|Number|String} other - The value to divide the current instance by.
      * @returns {Decimal}
      */
     divide(other) {
@@ -8946,7 +9134,7 @@ module.exports = (() => {
      * this {@link Decimal} instance.
      *
      * @public
-     * @returns {String}
+     * @returns {Number}
      */
     toNumber() {
       return this._big.toNumber();
@@ -9215,8 +9403,9 @@ module.exports = (() => {
   return Decimal;
 })();
 
-},{"./Enum":49,"./assert":52,"./is":53,"big.js":86}],49:[function(require,module,exports){
-const assert = require('./assert');
+},{"./Enum":50,"./assert":53,"./is":54,"big.js":87}],50:[function(require,module,exports){
+const assert = require('./assert'),
+  is = require('./is');
 module.exports = (() => {
   'use strict';
 
@@ -9231,19 +9420,29 @@ module.exports = (() => {
    * @interface
    * @param {String} code - The unique code of the enumeration item.
    * @param {String} description - A description of the enumeration item.
+   * @param {Number=} mapping - An alternate key value (used when external systems identify enumeration items using integer values).
    */
   class Enum {
-    constructor(code, description) {
+    constructor(code, description, mapping) {
       assert.argumentIsRequired(code, 'code', String);
       assert.argumentIsRequired(description, 'description', String);
+      assert.argumentIsOptional(mapping, 'mapping', Number);
+      if (is.number(mapping)) {
+        assert.argumentIsValid(mapping, 'mapping', is.integer, 'must be an integer');
+      }
       this._code = code;
       this._description = description;
+      if (is.number(mapping)) {
+        this._mapping = mapping;
+      } else {
+        this._mapping = null;
+      }
       const c = this.constructor;
       if (!types.has(c)) {
         types.set(c, []);
       }
-      const existing = Enum.fromCode(c, code);
-      if (existing === null) {
+      const valid = Enum.fromCode(c, this._code) === null && (this._mapping === null || Enum.fromMapping(c, this._mapping) === null);
+      if (valid) {
         types.get(c).push(this);
       }
     }
@@ -9266,6 +9465,17 @@ module.exports = (() => {
      */
     get description() {
       return this._description;
+    }
+
+    /**
+     * An alternate key value (used when external systems identify enumeration items
+     * using numeric values). This value will not be present for all enumerations.
+     *
+     * @public
+     * @returns {Number|null}
+     */
+    get mapping() {
+      return this._mapping;
     }
 
     /**
@@ -9298,14 +9508,31 @@ module.exports = (() => {
      * @static
      * @param {Function} type - The enumeration type.
      * @param {String} code - The enumeration item's code.
-     * @returns {*|null}
+     * @returns {Enum|null}
      */
     static fromCode(type, code) {
       return Enum.getItems(type).find(x => x.code === code) || null;
     }
 
     /**
-     * Returns all of the enumeration's items (given an enumeration type).
+     * Looks up a enumeration item; given the enumeration type and the enumeration
+     * item's value. If no matching item can be found, a null value is returned.
+     *
+     * @public
+     * @static
+     * @param {Function} type - The enumeration type.
+     * @param {String} mapping - The enumeration item's mapping value.
+     * @returns {Enum|null}
+     */
+    static fromMapping(type, mapping) {
+      if (mapping === null) {
+        return null;
+      }
+      return Enum.getItems(type).find(x => x.mapping === mapping) || null;
+    }
+
+    /**
+     * Returns the enumeration's items (given an enumeration type).
      *
      * @public
      * @static
@@ -9322,7 +9549,7 @@ module.exports = (() => {
   return Enum;
 })();
 
-},{"./assert":52}],50:[function(require,module,exports){
+},{"./assert":53,"./is":54}],51:[function(require,module,exports){
 const assert = require('./assert'),
   Enum = require('./Enum'),
   is = require('./is'),
@@ -9441,6 +9668,17 @@ module.exports = (() => {
     static get AMERICA_NEW_YORK() {
       return america_new_york;
     }
+
+    /**
+     * America/Denver
+     *
+     * @public
+     * @static
+     * @returns {Timezones}
+     */
+    static get AMERICA_DENVER() {
+      return america_denver;
+    }
     toString() {
       return `[Timezone (name=${this.code})]`;
     }
@@ -9449,10 +9687,11 @@ module.exports = (() => {
   const utc = Enum.fromCode(Timezones, 'UTC');
   const america_chicago = Enum.fromCode(Timezones, 'America/Chicago');
   const america_new_york = Enum.fromCode(Timezones, 'America/New_York');
+  const america_denver = Enum.fromCode(Timezones, 'America/Denver');
   return Timezones;
 })();
 
-},{"./Enum":49,"./assert":52,"./is":53,"./timezone":56,"date-fns-tz/getTimezoneOffset":90}],51:[function(require,module,exports){
+},{"./Enum":50,"./assert":53,"./is":54,"./timezone":57,"date-fns-tz/getTimezoneOffset":91}],52:[function(require,module,exports){
 const assert = require('./assert'),
   is = require('./is');
 module.exports = (() => {
@@ -9901,7 +10140,7 @@ module.exports = (() => {
   }
 })();
 
-},{"./assert":52,"./is":53}],52:[function(require,module,exports){
+},{"./assert":53,"./is":54}],53:[function(require,module,exports){
 const is = require('./is');
 module.exports = (() => {
   'use strict';
@@ -10029,7 +10268,7 @@ module.exports = (() => {
   };
 })();
 
-},{"./is":53}],53:[function(require,module,exports){
+},{"./is":54}],54:[function(require,module,exports){
 module.exports = (() => {
   'use strict';
 
@@ -10231,7 +10470,7 @@ module.exports = (() => {
   };
 })();
 
-},{}],54:[function(require,module,exports){
+},{}],55:[function(require,module,exports){
 const array = require('./array'),
   is = require('./is');
 module.exports = (() => {
@@ -10377,7 +10616,7 @@ module.exports = (() => {
   return object;
 })();
 
-},{"./array":51,"./is":53}],55:[function(require,module,exports){
+},{"./array":52,"./is":54}],56:[function(require,module,exports){
 const assert = require('./assert'),
   is = require('./is');
 module.exports = (() => {
@@ -10462,6 +10701,33 @@ module.exports = (() => {
       return character.repeat(length - s.length) + s;
     },
     /**
+     * Replaces starting characters of a string with a mask character and optionally
+     * truncates the string.
+     *
+     * @public
+     * @static
+     * @param {String} s - The string to format.
+     * @param {String} mask - The character to use for masking.
+     * @param {Number} show - The number of characters to preserve (of the left).
+     * @param {Number=} length - The final length of the string (truncating characters of the right).
+     */
+    mask(s, mask, show, length) {
+      assert.argumentIsRequired(s, 's', String);
+      assert.argumentIsRequired(mask, 'mask', String);
+      assert.argumentIsRequired(show, 'show', Number);
+      assert.argumentIsOptional(length, 'length', Number);
+      if (is.number(length) && !(length > 0)) {
+        return '';
+      }
+      const countShown = Math.min(s.length, Math.max(show, 0));
+      const countMasked = Math.max(s.length, Math.max(length || 0), 0) - countShown;
+      let masked = `${mask.slice(-1).repeat(countMasked)}${countShown > 0 ? s.slice(~countShown + 1) : ''}`;
+      if (is.number(length) && !(length < 0) && length < s.length) {
+        masked = masked.slice(~length + 1);
+      }
+      return masked;
+    },
+    /**
      * Performs a simple token replacement on a string; where the tokens
      * are braced numbers (e.g. {0}, {1}, {2}).
      *
@@ -10491,7 +10757,7 @@ module.exports = (() => {
   };
 })();
 
-},{"./assert":52,"./is":53}],56:[function(require,module,exports){
+},{"./assert":53,"./is":54}],57:[function(require,module,exports){
 const assert = require('./assert');
 module.exports = (() => {
   'use strict';
@@ -10562,9 +10828,9 @@ module.exports = (() => {
   return timezone;
 })();
 
-},{"./assert":52}],57:[function(require,module,exports){
+},{"./assert":53}],58:[function(require,module,exports){
 module.exports = require('./lib/axios');
-},{"./lib/axios":59}],58:[function(require,module,exports){
+},{"./lib/axios":60}],59:[function(require,module,exports){
 'use strict';
 
 var utils = require('./../utils');
@@ -10755,7 +11021,7 @@ module.exports = function xhrAdapter(config) {
   });
 };
 
-},{"../core/buildFullPath":65,"../core/createError":66,"./../core/settle":70,"./../helpers/buildURL":74,"./../helpers/cookies":76,"./../helpers/isURLSameOrigin":79,"./../helpers/parseHeaders":81,"./../utils":84}],59:[function(require,module,exports){
+},{"../core/buildFullPath":66,"../core/createError":67,"./../core/settle":71,"./../helpers/buildURL":75,"./../helpers/cookies":77,"./../helpers/isURLSameOrigin":80,"./../helpers/parseHeaders":82,"./../utils":85}],60:[function(require,module,exports){
 'use strict';
 
 var utils = require('./utils');
@@ -10813,7 +11079,7 @@ module.exports = axios;
 // Allow use of default import syntax in TypeScript
 module.exports.default = axios;
 
-},{"./cancel/Cancel":60,"./cancel/CancelToken":61,"./cancel/isCancel":62,"./core/Axios":63,"./core/mergeConfig":69,"./defaults":72,"./helpers/bind":73,"./helpers/isAxiosError":78,"./helpers/spread":82,"./utils":84}],60:[function(require,module,exports){
+},{"./cancel/Cancel":61,"./cancel/CancelToken":62,"./cancel/isCancel":63,"./core/Axios":64,"./core/mergeConfig":70,"./defaults":73,"./helpers/bind":74,"./helpers/isAxiosError":79,"./helpers/spread":83,"./utils":85}],61:[function(require,module,exports){
 'use strict';
 
 /**
@@ -10834,7 +11100,7 @@ Cancel.prototype.__CANCEL__ = true;
 
 module.exports = Cancel;
 
-},{}],61:[function(require,module,exports){
+},{}],62:[function(require,module,exports){
 'use strict';
 
 var Cancel = require('./Cancel');
@@ -10893,14 +11159,14 @@ CancelToken.source = function source() {
 
 module.exports = CancelToken;
 
-},{"./Cancel":60}],62:[function(require,module,exports){
+},{"./Cancel":61}],63:[function(require,module,exports){
 'use strict';
 
 module.exports = function isCancel(value) {
   return !!(value && value.__CANCEL__);
 };
 
-},{}],63:[function(require,module,exports){
+},{}],64:[function(require,module,exports){
 'use strict';
 
 var utils = require('./../utils');
@@ -11050,7 +11316,7 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 
 module.exports = Axios;
 
-},{"../helpers/buildURL":74,"../helpers/validator":83,"./../utils":84,"./InterceptorManager":64,"./dispatchRequest":67,"./mergeConfig":69}],64:[function(require,module,exports){
+},{"../helpers/buildURL":75,"../helpers/validator":84,"./../utils":85,"./InterceptorManager":65,"./dispatchRequest":68,"./mergeConfig":70}],65:[function(require,module,exports){
 'use strict';
 
 var utils = require('./../utils');
@@ -11106,7 +11372,7 @@ InterceptorManager.prototype.forEach = function forEach(fn) {
 
 module.exports = InterceptorManager;
 
-},{"./../utils":84}],65:[function(require,module,exports){
+},{"./../utils":85}],66:[function(require,module,exports){
 'use strict';
 
 var isAbsoluteURL = require('../helpers/isAbsoluteURL');
@@ -11128,7 +11394,7 @@ module.exports = function buildFullPath(baseURL, requestedURL) {
   return requestedURL;
 };
 
-},{"../helpers/combineURLs":75,"../helpers/isAbsoluteURL":77}],66:[function(require,module,exports){
+},{"../helpers/combineURLs":76,"../helpers/isAbsoluteURL":78}],67:[function(require,module,exports){
 'use strict';
 
 var enhanceError = require('./enhanceError');
@@ -11148,7 +11414,7 @@ module.exports = function createError(message, config, code, request, response) 
   return enhanceError(error, config, code, request, response);
 };
 
-},{"./enhanceError":68}],67:[function(require,module,exports){
+},{"./enhanceError":69}],68:[function(require,module,exports){
 'use strict';
 
 var utils = require('./../utils');
@@ -11232,7 +11498,7 @@ module.exports = function dispatchRequest(config) {
   });
 };
 
-},{"../cancel/isCancel":62,"../defaults":72,"./../utils":84,"./transformData":71}],68:[function(require,module,exports){
+},{"../cancel/isCancel":63,"../defaults":73,"./../utils":85,"./transformData":72}],69:[function(require,module,exports){
 'use strict';
 
 /**
@@ -11276,7 +11542,7 @@ module.exports = function enhanceError(error, config, code, request, response) {
   return error;
 };
 
-},{}],69:[function(require,module,exports){
+},{}],70:[function(require,module,exports){
 'use strict';
 
 var utils = require('../utils');
@@ -11365,7 +11631,7 @@ module.exports = function mergeConfig(config1, config2) {
   return config;
 };
 
-},{"../utils":84}],70:[function(require,module,exports){
+},{"../utils":85}],71:[function(require,module,exports){
 'use strict';
 
 var createError = require('./createError');
@@ -11392,7 +11658,7 @@ module.exports = function settle(resolve, reject, response) {
   }
 };
 
-},{"./createError":66}],71:[function(require,module,exports){
+},{"./createError":67}],72:[function(require,module,exports){
 'use strict';
 
 var utils = require('./../utils');
@@ -11416,7 +11682,7 @@ module.exports = function transformData(data, headers, fns) {
   return data;
 };
 
-},{"./../defaults":72,"./../utils":84}],72:[function(require,module,exports){
+},{"./../defaults":73,"./../utils":85}],73:[function(require,module,exports){
 (function (process){(function (){
 'use strict';
 
@@ -11554,7 +11820,7 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 module.exports = defaults;
 
 }).call(this)}).call(this,require('_process'))
-},{"./adapters/http":58,"./adapters/xhr":58,"./core/enhanceError":68,"./helpers/normalizeHeaderName":80,"./utils":84,"_process":91}],73:[function(require,module,exports){
+},{"./adapters/http":59,"./adapters/xhr":59,"./core/enhanceError":69,"./helpers/normalizeHeaderName":81,"./utils":85,"_process":92}],74:[function(require,module,exports){
 'use strict';
 
 module.exports = function bind(fn, thisArg) {
@@ -11567,7 +11833,7 @@ module.exports = function bind(fn, thisArg) {
   };
 };
 
-},{}],74:[function(require,module,exports){
+},{}],75:[function(require,module,exports){
 'use strict';
 
 var utils = require('./../utils');
@@ -11639,7 +11905,7 @@ module.exports = function buildURL(url, params, paramsSerializer) {
   return url;
 };
 
-},{"./../utils":84}],75:[function(require,module,exports){
+},{"./../utils":85}],76:[function(require,module,exports){
 'use strict';
 
 /**
@@ -11655,7 +11921,7 @@ module.exports = function combineURLs(baseURL, relativeURL) {
     : baseURL;
 };
 
-},{}],76:[function(require,module,exports){
+},{}],77:[function(require,module,exports){
 'use strict';
 
 var utils = require('./../utils');
@@ -11710,7 +11976,7 @@ module.exports = (
     })()
 );
 
-},{"./../utils":84}],77:[function(require,module,exports){
+},{"./../utils":85}],78:[function(require,module,exports){
 'use strict';
 
 /**
@@ -11726,7 +11992,7 @@ module.exports = function isAbsoluteURL(url) {
   return /^([a-z][a-z\d\+\-\.]*:)?\/\//i.test(url);
 };
 
-},{}],78:[function(require,module,exports){
+},{}],79:[function(require,module,exports){
 'use strict';
 
 /**
@@ -11739,7 +12005,7 @@ module.exports = function isAxiosError(payload) {
   return (typeof payload === 'object') && (payload.isAxiosError === true);
 };
 
-},{}],79:[function(require,module,exports){
+},{}],80:[function(require,module,exports){
 'use strict';
 
 var utils = require('./../utils');
@@ -11809,7 +12075,7 @@ module.exports = (
     })()
 );
 
-},{"./../utils":84}],80:[function(require,module,exports){
+},{"./../utils":85}],81:[function(require,module,exports){
 'use strict';
 
 var utils = require('../utils');
@@ -11823,7 +12089,7 @@ module.exports = function normalizeHeaderName(headers, normalizedName) {
   });
 };
 
-},{"../utils":84}],81:[function(require,module,exports){
+},{"../utils":85}],82:[function(require,module,exports){
 'use strict';
 
 var utils = require('./../utils');
@@ -11878,7 +12144,7 @@ module.exports = function parseHeaders(headers) {
   return parsed;
 };
 
-},{"./../utils":84}],82:[function(require,module,exports){
+},{"./../utils":85}],83:[function(require,module,exports){
 'use strict';
 
 /**
@@ -11907,7 +12173,7 @@ module.exports = function spread(callback) {
   };
 };
 
-},{}],83:[function(require,module,exports){
+},{}],84:[function(require,module,exports){
 'use strict';
 
 var pkg = require('./../../package.json');
@@ -12014,7 +12280,7 @@ module.exports = {
   validators: validators
 };
 
-},{"./../../package.json":85}],84:[function(require,module,exports){
+},{"./../../package.json":86}],85:[function(require,module,exports){
 'use strict';
 
 var bind = require('./helpers/bind');
@@ -12365,7 +12631,7 @@ module.exports = {
   stripBOM: stripBOM
 };
 
-},{"./helpers/bind":73}],85:[function(require,module,exports){
+},{"./helpers/bind":74}],86:[function(require,module,exports){
 module.exports={
   "name": "axios",
   "version": "0.21.4",
@@ -12451,11 +12717,11 @@ module.exports={
   ]
 }
 
-},{}],86:[function(require,module,exports){
+},{}],87:[function(require,module,exports){
 /*
- *  big.js v6.2.1
+ *  big.js v6.2.2
  *  A small, fast, easy-to-use library for arbitrary-precision decimal arithmetic.
- *  Copyright (c) 2022 Michael Mclaughlin
+ *  Copyright (c) 2024 Michael Mclaughlin
  *  https://github.com/MikeMcl/big.js/LICENCE.md
  */
 ;(function (GLOBAL) {
@@ -13260,7 +13526,7 @@ module.exports={
     }
 
     // Estimate.
-    s = Math.sqrt(x + '');
+    s = Math.sqrt(+stringify(x, true, true));
 
     // Math.sqrt underflow/overflow?
     // Re-estimate: pass x coefficient to Math.sqrt as integer, then adjust the result exponent.
@@ -13425,7 +13691,7 @@ module.exports={
    * Return the value of this Big as a primitve number.
    */
   P.toNumber = function () {
-    var n = Number(stringify(this, true, true));
+    var n = +stringify(this, true, true);
     if (this.constructor.strict === true && !this.eq(n.toString())) {
       throw Error(NAME + 'Imprecise conversion');
     }
@@ -13496,7 +13762,7 @@ module.exports={
   }
 })(this);
 
-},{}],87:[function(require,module,exports){
+},{}],88:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -13519,7 +13785,7 @@ function newDateUTC(fullYear, month, day, hour, minute, second, millisecond) {
 }
 
 module.exports = exports.default;
-},{}],88:[function(require,module,exports){
+},{}],89:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -13657,7 +13923,7 @@ function isValidTimezoneIANAString(timeZoneString) {
 }
 
 module.exports = exports.default;
-},{"../newDateUTC/index.js":87,"../tzTokenizeDate/index.js":89}],89:[function(require,module,exports){
+},{"../newDateUTC/index.js":88,"../tzTokenizeDate/index.js":90}],90:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -13758,7 +14024,7 @@ function getDateTimeFormat(timeZone) {
 }
 
 module.exports = exports.default;
-},{}],90:[function(require,module,exports){
+},{}],91:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -13802,7 +14068,7 @@ function getTimezoneOffset(timeZone, date) {
 }
 
 module.exports = exports.default;
-},{"../_lib/tzParseTimezone/index.js":88}],91:[function(require,module,exports){
+},{"../_lib/tzParseTimezone/index.js":89}],92:[function(require,module,exports){
 // shim for using process in browser
 var process = module.exports = {};
 

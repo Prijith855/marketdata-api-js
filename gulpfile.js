@@ -213,7 +213,6 @@ gulp.task('create-github-release', (cb) => {
 });
 
 gulp.task('release', gulp.series(
-	'ensure-clean-working-directory',
 	'bump-choice',
 	'bump-version',
 	'embed-version',

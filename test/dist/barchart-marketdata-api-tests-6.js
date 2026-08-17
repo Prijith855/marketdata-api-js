@@ -285,7 +285,7 @@ module.exports = (() => {
 })();
 
 },{}],4:[function(require,module,exports){
-const object = require('@barchart/common-js/lang//object');
+const object = require('@barchart/common-js/lang/object');
 const LoggerFactory = require('./../logging/LoggerFactory');
 module.exports = (() => {
   'use strict';
@@ -516,7 +516,7 @@ module.exports = (() => {
   return CumulativeVolume;
 })();
 
-},{"./../logging/LoggerFactory":2,"@barchart/common-js/lang//object":40}],5:[function(require,module,exports){
+},{"./../logging/LoggerFactory":2,"@barchart/common-js/lang/object":40}],5:[function(require,module,exports){
 const SymbolParser = require('./../utilities/parsers/SymbolParser'),
   buildPriceFormatter = require('../utilities/format/factories/price');
 const AssetClass = require('./../utilities/data/AssetClass');
@@ -3078,13 +3078,13 @@ module.exports = (() => {
   types.funds = {};
   types.funds.canadian = /(.*)(\.CF)$/i;
   types.futures = {};
-  types.futures.alias = /^([A-Z][A-Z0-9\$\-!\.]{0,2})(\*{1})([0-9]{1,2})$/i;
-  types.futures.concrete = /^([A-Z][A-Z0-9\$\-!\.]{0,2})([A-Z]{1})([0-9]{4}|[0-9]{1,2})$/i;
+  types.futures.alias = /^([A-Z][A-Z0-9\$\-!\.]{0,3})(\*{1})([0-9]{1,2})$/i;
+  types.futures.concrete = /^([A-Z][A-Z0-9\$\-!\.]{0,3})([A-Z]{1})([0-9]{4}|[0-9]{1,2})$/i;
   types.futures.spread = /^_S_/i;
   types.futures.cash = /(.*)(Y00)$/;
   types.futures.options = {};
-  types.futures.options.historical = /^([A-Z][A-Z0-9\$\-!\.]{0,2})([A-Z])([0-9]{2})([0-9]{1,5})(C|P)$/i;
-  types.futures.options.long = /^([A-Z][A-Z0-9\$\-!\.]{0,2})([A-Z])([0-9]{1,4})\|(\-?[0-9]{1,5})(C|P)$/i;
+  types.futures.options.historical = /^([A-Z][A-Z0-9\$\-!\.]{0,3})([A-Z])([0-9]{2})([0-9]{1,5})(C|P)$/i;
+  types.futures.options.long = /^([A-Z][A-Z0-9\$\-!\.]{0,3})([A-Z])([0-9]{1,4})\|(\-?[0-9]{1,5})(C|P)$/i;
   types.futures.options.short = /^([A-Z][A-Z0-9\$\-!\.]?)([A-Z])([0-9]{1,4})([A-Z])$/i;
   types.indicies = {};
   types.indicies.external = /^\$(.*)$/i;
@@ -3525,7 +3525,7 @@ module.exports = (() => {
      * current instance's value and the value supplied.
      *
      * @public
-     * @param {Decimal|Number|String} other - The value to add.
+     * @param {Decimal|Number|String} other - The value to multiply the current instance by.
      * @returns {Decimal}
      */
     multiply(other) {
@@ -3538,7 +3538,7 @@ module.exports = (() => {
      * supplied.
      *
      * @public
-     * @param {Decimal|Number|String} other - The value to subtract.
+     * @param {Decimal|Number|String} other - The value to divide the current instance by.
      * @returns {Decimal}
      */
     divide(other) {
@@ -3796,7 +3796,7 @@ module.exports = (() => {
      * this {@link Decimal} instance.
      *
      * @public
-     * @returns {String}
+     * @returns {Number}
      */
     toNumber() {
       return this._big.toNumber();
@@ -4066,7 +4066,8 @@ module.exports = (() => {
 })();
 
 },{"./Enum":35,"./assert":38,"./is":39,"big.js":49}],35:[function(require,module,exports){
-const assert = require('./assert');
+const assert = require('./assert'),
+  is = require('./is');
 module.exports = (() => {
   'use strict';
 
@@ -4081,19 +4082,29 @@ module.exports = (() => {
    * @interface
    * @param {String} code - The unique code of the enumeration item.
    * @param {String} description - A description of the enumeration item.
+   * @param {Number=} mapping - An alternate key value (used when external systems identify enumeration items using integer values).
    */
   class Enum {
-    constructor(code, description) {
+    constructor(code, description, mapping) {
       assert.argumentIsRequired(code, 'code', String);
       assert.argumentIsRequired(description, 'description', String);
+      assert.argumentIsOptional(mapping, 'mapping', Number);
+      if (is.number(mapping)) {
+        assert.argumentIsValid(mapping, 'mapping', is.integer, 'must be an integer');
+      }
       this._code = code;
       this._description = description;
+      if (is.number(mapping)) {
+        this._mapping = mapping;
+      } else {
+        this._mapping = null;
+      }
       const c = this.constructor;
       if (!types.has(c)) {
         types.set(c, []);
       }
-      const existing = Enum.fromCode(c, code);
-      if (existing === null) {
+      const valid = Enum.fromCode(c, this._code) === null && (this._mapping === null || Enum.fromMapping(c, this._mapping) === null);
+      if (valid) {
         types.get(c).push(this);
       }
     }
@@ -4116,6 +4127,17 @@ module.exports = (() => {
      */
     get description() {
       return this._description;
+    }
+
+    /**
+     * An alternate key value (used when external systems identify enumeration items
+     * using numeric values). This value will not be present for all enumerations.
+     *
+     * @public
+     * @returns {Number|null}
+     */
+    get mapping() {
+      return this._mapping;
     }
 
     /**
@@ -4148,14 +4170,31 @@ module.exports = (() => {
      * @static
      * @param {Function} type - The enumeration type.
      * @param {String} code - The enumeration item's code.
-     * @returns {*|null}
+     * @returns {Enum|null}
      */
     static fromCode(type, code) {
       return Enum.getItems(type).find(x => x.code === code) || null;
     }
 
     /**
-     * Returns all of the enumeration's items (given an enumeration type).
+     * Looks up a enumeration item; given the enumeration type and the enumeration
+     * item's value. If no matching item can be found, a null value is returned.
+     *
+     * @public
+     * @static
+     * @param {Function} type - The enumeration type.
+     * @param {String} mapping - The enumeration item's mapping value.
+     * @returns {Enum|null}
+     */
+    static fromMapping(type, mapping) {
+      if (mapping === null) {
+        return null;
+      }
+      return Enum.getItems(type).find(x => x.mapping === mapping) || null;
+    }
+
+    /**
+     * Returns the enumeration's items (given an enumeration type).
      *
      * @public
      * @static
@@ -4172,7 +4211,7 @@ module.exports = (() => {
   return Enum;
 })();
 
-},{"./assert":38}],36:[function(require,module,exports){
+},{"./assert":38,"./is":39}],36:[function(require,module,exports){
 const assert = require('./assert'),
   Enum = require('./Enum'),
   is = require('./is'),
@@ -4291,6 +4330,17 @@ module.exports = (() => {
     static get AMERICA_NEW_YORK() {
       return america_new_york;
     }
+
+    /**
+     * America/Denver
+     *
+     * @public
+     * @static
+     * @returns {Timezones}
+     */
+    static get AMERICA_DENVER() {
+      return america_denver;
+    }
     toString() {
       return `[Timezone (name=${this.code})]`;
     }
@@ -4299,6 +4349,7 @@ module.exports = (() => {
   const utc = Enum.fromCode(Timezones, 'UTC');
   const america_chicago = Enum.fromCode(Timezones, 'America/Chicago');
   const america_new_york = Enum.fromCode(Timezones, 'America/New_York');
+  const america_denver = Enum.fromCode(Timezones, 'America/Denver');
   return Timezones;
 })();
 
@@ -5310,6 +5361,33 @@ module.exports = (() => {
         throw new Error('The "character" argument must be one character in length.');
       }
       return character.repeat(length - s.length) + s;
+    },
+    /**
+     * Replaces starting characters of a string with a mask character and optionally
+     * truncates the string.
+     *
+     * @public
+     * @static
+     * @param {String} s - The string to format.
+     * @param {String} mask - The character to use for masking.
+     * @param {Number} show - The number of characters to preserve (of the left).
+     * @param {Number=} length - The final length of the string (truncating characters of the right).
+     */
+    mask(s, mask, show, length) {
+      assert.argumentIsRequired(s, 's', String);
+      assert.argumentIsRequired(mask, 'mask', String);
+      assert.argumentIsRequired(show, 'show', Number);
+      assert.argumentIsOptional(length, 'length', Number);
+      if (is.number(length) && !(length > 0)) {
+        return '';
+      }
+      const countShown = Math.min(s.length, Math.max(show, 0));
+      const countMasked = Math.max(s.length, Math.max(length || 0), 0) - countShown;
+      let masked = `${mask.slice(-1).repeat(countMasked)}${countShown > 0 ? s.slice(~countShown + 1) : ''}`;
+      if (is.number(length) && !(length < 0) && length < s.length) {
+        masked = masked.slice(~length + 1);
+      }
+      return masked;
     },
     /**
      * Performs a simple token replacement on a string; where the tokens
@@ -8548,9 +8626,9 @@ exports.ParseError = ParseError;
 
 },{"./conventions":43}],49:[function(require,module,exports){
 /*
- *  big.js v6.2.1
+ *  big.js v6.2.2
  *  A small, fast, easy-to-use library for arbitrary-precision decimal arithmetic.
- *  Copyright (c) 2022 Michael Mclaughlin
+ *  Copyright (c) 2024 Michael Mclaughlin
  *  https://github.com/MikeMcl/big.js/LICENCE.md
  */
 ;(function (GLOBAL) {
@@ -9355,7 +9433,7 @@ exports.ParseError = ParseError;
     }
 
     // Estimate.
-    s = Math.sqrt(x + '');
+    s = Math.sqrt(+stringify(x, true, true));
 
     // Math.sqrt underflow/overflow?
     // Re-estimate: pass x coefficient to Math.sqrt as integer, then adjust the result exponent.
@@ -9520,7 +9598,7 @@ exports.ParseError = ParseError;
    * Return the value of this Big as a primitve number.
    */
   P.toNumber = function () {
-    var n = Number(stringify(this, true, true));
+    var n = +stringify(this, true, true);
     if (this.constructor.strict === true && !this.eq(n.toString())) {
       throw Error(NAME + 'Imprecise conversion');
     }
@@ -16808,9 +16886,6 @@ describe('When getting a producer symbol', () => {
     it('CLG36 should map to CLB6', () => {
       expect(SymbolParser.getProducerSymbol('CLG36')).toEqual('CLB6');
     });
-    it('CLH35 should map to CLC5', () => {
-      expect(SymbolParser.getProducerSymbol('CLH35')).toEqual('CLC5');
-    });
     it('CLJ36 should map to CLD6', () => {
       expect(SymbolParser.getProducerSymbol('CLJ36')).toEqual('CLD6');
     });
@@ -16837,6 +16912,9 @@ describe('When getting a producer symbol', () => {
     });
     it('CLZ44 should map to CLT4', () => {
       expect(SymbolParser.getProducerSymbol('CLZ44')).toEqual('CLT4');
+    });
+    it('CLH45 should map to CLC5', () => {
+      expect(SymbolParser.getProducerSymbol('CLH45')).toEqual('CLC5');
     });
   });
   describe('When the year is unimportant', () => {

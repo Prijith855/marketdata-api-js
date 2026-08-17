@@ -2806,10 +2806,6 @@ describe('When getting a producer symbol', () => {
 			expect(SymbolParser.getProducerSymbol('CLG36')).toEqual('CLB6');
 		});
 
-		it('CLH35 should map to CLC5', () => {
-			expect(SymbolParser.getProducerSymbol('CLH35')).toEqual('CLC5');
-		});
-
 		it('CLJ36 should map to CLD6', () => {
 			expect(SymbolParser.getProducerSymbol('CLJ36')).toEqual('CLD6');
 		});
@@ -2844,6 +2840,10 @@ describe('When getting a producer symbol', () => {
 
 		it('CLZ44 should map to CLT4', () => {
 			expect(SymbolParser.getProducerSymbol('CLZ44')).toEqual('CLT4');
+		});
+
+		it('CLH45 should map to CLC5', () => {
+			expect(SymbolParser.getProducerSymbol('CLH45')).toEqual('CLC5');
 		});
 	});
 
